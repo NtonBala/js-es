@@ -6,3 +6,16 @@
 // [6,5,4,3,2,1]
 
 ////////////////// Решение //////////////////
+const arr = [1, 2, 3, 4, 5, 6];
+
+for (let i = 0; i < arr.length; i++) {
+  for (let l = arr.length - 1; l >= 0; l--) {
+    if (arr[l] > arr[l - 1]) {
+      const t = arr[l];
+      arr[l] = arr[l - 1];
+      arr[l - 1] = t;
+    }
+  }
+}
+
+console.log(arr);

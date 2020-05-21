@@ -5,3 +5,14 @@
 // const array = [1, 2, 5, 9, 4, 13, 4, 10];
 
 ////////////////// Решение //////////////////
+const array = [1, 2, 5, 9, 4, 13, 4, 10];
+
+for (let i = 0; i < array.length; i++) {
+  const value = array[i];
+
+  if (value === 4) {
+    console.log('Есть!');
+
+    break;
+  }
+}

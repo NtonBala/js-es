@@ -5,3 +5,12 @@
 // const array = [2, 5, 9, 15, 0, 4];
 
 ////////////////// Решение //////////////////
+const array = [2, 5, 9, 15, 0, 4];
+
+for (let i = 0; i < array.length; i++) {
+  const el = array[i];
+
+  if (el > 3 && el < 10) {
+    console.log(el);
+  }  
+}

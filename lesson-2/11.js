@@ -6,3 +6,13 @@
 // const array = [2, -1, -3, 15, 0, 4];
 
 ////////////////// Решение //////////////////
+const array = [2, -1, -3, 15, 0, 4];
+let sum = 0;
+
+for (const el of array) {
+  if (el > 0) {
+    sum += el;
+  }
+}
+
+console.log(sum);
