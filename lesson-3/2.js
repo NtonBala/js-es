@@ -12,18 +12,20 @@
 
 // Решение
 function checkSpam(source, example) {
-  if (source === void 0 || typeof source !== 'string') {
+  if (typeof source !== 'string') {
     throw new Error('First argument is mandatory and must be of type \'string\'');
-  } else if (example === void 0 || typeof example !== 'string') {
+  }
+
+  if (typeof example !== 'string') {
     throw new Error('Second argument is mandatory and must be of type \'string\'');
   }
 
   const sourceLowerCased = source.toLowerCase();
   const exampleLowerCased = example.toLowerCase();
 
-  const searchedIndex = sourceLowerCased.indexOf(exampleLowerCased);
+  const exampleIndex = sourceLowerCased.indexOf(exampleLowerCased);
 
-  return searchedIndex > -1 ? true : false;
+  return exampleIndex > -1 ? true : false;
 }
 
 console.log(checkSpam('pitterXXX@gmail.com', 'xxx')); // true

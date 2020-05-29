@@ -15,9 +15,11 @@
 
 // Решение
 function truncate (string, maxLength) {
-  if (string === undefined || typeof string !== 'string') {
+  if (typeof string !== 'string') {
     throw new Error('First argument is mandatory and must be of type \'string\'');
-  } else if (maxLength && typeof maxLength !== 'number') {
+  }
+
+  if (maxLength && typeof maxLength !== 'number') {
     throw new Error('Second argument must be of type \'number\'');
   }
 

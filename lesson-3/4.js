@@ -21,8 +21,11 @@ function extractCurrencyValue (source) {
     return result;
   }
 
-  const price = Number(source.slice(1));
-  result = !isNaN(price) ? price : null;
+  const sum = Number(source.slice(1));
+
+  if (!isNaN(sum)) {
+    result = sum;
+  }
 
   return result;
 }
