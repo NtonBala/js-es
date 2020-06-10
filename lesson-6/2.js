@@ -32,13 +32,13 @@ const filter = function (arr, cb) {
 
     const filteredArr = [];
 
-    arr.forEach(function (el, i, arrRef) {
-        const isValid = cb(el, i, arrRef);
+    for (let i = 0; i < arr.length; i++) {
+        const isValid = cb(arr[i], i, arr);
 
         if (isValid) {
-            filteredArr.push(el);
+            filteredArr.push(arr[i]);
         }
-    });
+    }
 
     return filteredArr;
 };

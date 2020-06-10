@@ -32,13 +32,7 @@ const every = function (arr, cb) {
 
     let isTrue = false;
 
-    for (const key of Object.keys(arr)) {
-        const i = Number(key);
-
-        if (!Number.isInteger(i) || i < 0) {
-            continue;
-        }
-
+    for (let i = 0; i < arr.length; i++) {
         isTrue = Boolean(cb(arr[i], i, arr));
 
         if (!isTrue) {

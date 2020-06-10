@@ -30,13 +30,7 @@ const forEach = function (arr, cb) {
         throw new Error('Second argument must be callback function');
     }
 
-    for (const key of Object.keys(arr) ) {
-        const i = Number(key);
-
-        if (!Number.isInteger(i) || i < 0) {
-            continue;
-        }
-
+    for (let i = 0; i < arr.length; i++) {
         cb(arr[i], i, arr);
     }
 };
