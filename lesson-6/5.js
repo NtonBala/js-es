@@ -32,14 +32,8 @@ const reduce = function (arr, cb, initial) {
     }
 
     let acc = initial || arr[0];
-    
-    for (const key of Object.keys(arr)) {
-        const i = Number(key);
 
-        if (!Number.isInteger(i) || i < 0) {
-            continue;
-        }
-
+    for (let i = 0; i < arr.length; i++) {
         if (i === 0 && !initial) {
             continue;
         }
