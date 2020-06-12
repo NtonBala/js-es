@@ -17,12 +17,11 @@
  */
 
 // Решение
-const person = {
-  rate: null,
-};
+const person = {};
 
 Object.defineProperties(person, {
   rate: {
+    value: null,
     writable: true,
     enumerable: false,
     configurable: false,

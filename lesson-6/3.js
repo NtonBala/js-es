@@ -30,17 +30,17 @@ const every = function (arr, cb) {
         throw new Error('Second argument must be callback function');
     }
 
-    let isTrue = false;
+    let isValid = false;
 
     for (let i = 0; i < arr.length; i++) {
-        isTrue = Boolean(cb(arr[i], i, arr));
+        isValid = Boolean(cb(arr[i], i, arr));
 
-        if (!isTrue) {
-            return isTrue;
+        if (!isValid) {
+            return isValid;
         }
     }
 
-    return isTrue;
+    return isValid;
 };
 
 try {

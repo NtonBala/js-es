@@ -21,7 +21,7 @@ const f = function (a, b ,c) {
     throw new Error('Third argument must be a number');
   }
 
-  const result = (a - b) / c;
+  const result = c === 0 ? 0 : (a - b) / c;
 
   return result;
 };

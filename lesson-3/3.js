@@ -23,10 +23,9 @@ function truncate (string, maxLength) {
     throw new Error('Second argument must be of type \'number\'');
   }
 
-  const length = string.length;
   let result = string;
 
-  if (maxLength >= 3 && length > maxLength) {
+  if (maxLength >= 3 && string.length > maxLength) {
     result = `${string.slice(0, maxLength - 3)}...`;
   }
 
