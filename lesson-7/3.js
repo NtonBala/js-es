@@ -12,7 +12,7 @@
 
 // Решение
 const createArray = function (val, length) {
-  if (typeof val !== 'number' && typeof val !== 'string' && typeof val !== 'object' || val === null) {
+  if (typeof val !== 'number' && typeof val !== 'string' && typeof val !== 'object') {
     throw new Error('First argument must be either of number or of string, or of object type');
   }
 
