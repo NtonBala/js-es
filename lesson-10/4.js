@@ -12,7 +12,7 @@
  * становится доступным из параметра следующей коллбек-функции в цепочке.
  *
  * Функция compose() возвращает ещё одну функцию с одним параметром.
- * Значение, переданное этой функции в качестве аргумента должно ст`ать
+ * Значение, переданное этой функции в качестве аргумента должно стать
  * параметром первой коллбек-функции в цепочке выполнения функции compose().
  *
  * Итого, подпись функции compose: `compose(f, g)(x) = f(g(x))`.
@@ -31,23 +31,19 @@
 
 const compose = (...functions) => {
   return (value) => {
-    let result = value;
-
-    for (let i = functions.length - 1; i >= 0; i--) {
-      const func = functions[i];
-
-      if (typeof func !== 'function') {
+    return functions.reduceRight((acc, cb, i) => {
+      if (typeof cb !== 'function') {
         throw new Error(`argument ${i} must be a callback function: in "${compose.name}"`);
       }
 
-      result = func(result);
+      const result = cb(acc);
 
       if (typeof result === 'undefined') {
         throw new Error(`callback ${i} must return value: in "${compose.name}"`);
       }
-    }
 
-    return result;
+      return result;
+    }, value);
   };
 };
 
