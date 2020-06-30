@@ -22,7 +22,7 @@ const createNumberGenerator = () => {
     const numbers = [];
 
     const createNumber = () => {
-        if (numbers.length > 99) {
+        if (numbers.length >= 100) {
             throw new Error('There are no more numbers available.');
         }
         
