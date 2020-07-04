@@ -19,20 +19,20 @@
 'use strict';
 
 const createNumberGenerator = () => {
-    const numbers = [];
+    const numbers = new Set();
 
     const createNumber = () => {
-        if (numbers.length >= 100) {
+        if (numbers.size >= 100) {
             throw new Error('There are no more numbers available.');
         }
         
         const random = Math.floor(Math.random() * 101);
-        
-        if (numbers.includes(random)) {
+
+        if (numbers.has(random)) {
             return createNumber();
         }
 
-        numbers.push(random);
+        numbers.add(random);
 
         return random;
     };
