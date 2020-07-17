@@ -21,7 +21,7 @@ function upperCaseFirst(str) {
   return `${firstCharUpperCased}${rest}`;
 }
 
-console.log(upperCaseFirst('pitter')); // Pitter
-console.log(upperCaseFirst('')); // ''
+// console.log(upperCaseFirst('pitter')); // Pitter
+// console.log(upperCaseFirst('')); // ''
 
 exports.upperCaseFirst = upperCaseFirst;
